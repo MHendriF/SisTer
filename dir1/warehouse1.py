@@ -1,7 +1,6 @@
 from __future__ import print_function
 import Pyro4
 
-
 @Pyro4.expose
 @Pyro4.behavior(instance_mode="single")
 class Warehouse(object):
@@ -20,12 +19,16 @@ class Warehouse(object):
         print("{0} stored the {1}.".format(name, item))
 
 
+
 def main():
-    Pyro4.Daemon.serveSimple(
-        {
-            Warehouse: "example.warehouse1"
-        },
-        ns=False)
+    with Pyro4.Daemon(host='localhost') as daemon:
+        worker_name = 'kelompok3.worker1'
+        uri = daemon.register(Warehouse)
+        with Pyro4.locateNS() as ns:
+            ns.register(worker_name, uri)
+        print(worker_name + 'ready')
+        daemon.requestLoop()
+
 
 
 if __name__ == "__main__":
