@@ -5,7 +5,7 @@ def get_node(namafile):
     petalokasi = {}
     petalokasi['A'] = 'PYRO:example.warehouse1@localhost:52397'
     petalokasi['B'] = 'PYRO:example.warehouse2@localhost:52401'
-    petalokasi['C'] = 'PYRO:example.warehouse3@localhost:52405'
+    petalokasi['C'] = 'PYRO:example.warehouse3@localhost:49186'
     petalokasi['D'] = 'PYRO:example.warehouse4@localhost:52415'
     encode = namafile.encode('utf-8')
     h1= hashlib.md5(encode).hexdigest()[-1]
