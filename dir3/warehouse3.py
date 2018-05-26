@@ -21,11 +21,13 @@ class Warehouse(object):
 
 
 def main():
-    Pyro4.Daemon.serveSimple(
-        {
-            Warehouse: "example.warehouse3"
-        },
-        ns=False)
+    with Pyro4.Daemon(host='localhost') as daemon:
+        worker_name = 'kelompok3.worker3'
+        uri = daemon.register(Warehouse)
+        with Pyro4.locateNS() as ns:
+            ns.register(worker_name, uri)
+            print(worker_name + 'ready')
+        daemon.requestLoop()
 
 
 if __name__ == "__main__":

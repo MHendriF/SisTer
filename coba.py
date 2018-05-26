@@ -3,10 +3,17 @@ import hashlib
 
 def get_node(namafile):
     petalokasi = {}
+<<<<<<< HEAD
     petalokasi['A'] = 'PYRO:example.warehouse1@localhost:52397'
     petalokasi['B'] = 'PYRO:example.warehouse2@localhost:52401'
     petalokasi['C'] = 'PYRO:example.warehouse3@localhost:49186'
     petalokasi['D'] = 'PYRO:example.warehouse4@localhost:52415'
+=======
+    petalokasi['A'] = ('PYRONAME:kelompok3.worker1')
+    petalokasi['B'] = ('PYRONAME:kelompok3.worker2')
+    petalokasi['C'] = ('PYRONAME:kelompok3.worker3')
+    petalokasi['D'] = ('PYRONAME:kelompok3.worker4')
+>>>>>>> bd6921c5a4bef38f3de531bb608189b76dd79e2c
     encode = namafile.encode('utf-8')
     h1= hashlib.md5(encode).hexdigest()[-1]
     if  h1 == '0' or h1 == '1' or h1 == '2' or h1 == '3':
@@ -34,13 +41,16 @@ def getfile(namafile,isifile):
 def main():
     file = "buku"
     isi = "pdf"
+    file2 = "koran"
+    isi2 = "tulisan"
     storefile(file,isi)
+    getfile(file,isi)
+    storefile(file2, isi2)
+
 
 
 if __name__ == '__main__':
     main()
-
-
 
 
 
