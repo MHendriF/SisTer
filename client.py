@@ -15,7 +15,7 @@ def main():
     cwd = '/'
     while True:
         args = []
-        print ('cli >> '+ cwd ),
+        print ('command >> '+ cwd ),
         arg = raw_input()
         args.extend(arg.split(' '))
 

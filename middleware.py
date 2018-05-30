@@ -3,7 +3,7 @@ import Pyro4
 import os
 import hashlib
 #list_workers= ['PYRO:obj_407b5d663ba94cdc974651d5433b6b35@10.151.254.104:50099','PYRO:obj_407b5d663ba94cdc974651d5433b6b35@10.151.254.104:50099','PYRO:obj_407b5d663ba94cdc974651d5433b6b35@10.151.254.104:50099','PYRO:obj_407b5d663ba94cdc974651d5433b6b35@10.151.254.104:50099','PYRO:obj_407b5d663ba94cdc974651d5433b6b35@10.151.254.104:50099']
-list_workers = ['PYRO:worker@127.0.0.1:9000','PYRO:worker@127.0.0.1:9001','PYRO:worker@127.0.0.1:9002','PYRO:worker@127.0.0.1:9003']
+list_workers = ['PYRO:obj_4931565d4f0b4c538b877c4658b6e882@10.151.253.54:59010','PYRO:obj_19827bdb5bf349dd827246b6bdb0e02d@10.151.253.54:59078','PYRO:obj_6f02b7f6e16c4935a1c9416bf1240da0@10.151.253.54:59070','PYRO:obj_f303a3a53dff49d793976d083ea3fb99@10.151.253.54:59088']
 # list_workers = ['PYRO:worker@127.0.0.1:9000','PYRO:worker@127.0.0.1:9001']
 workers = []
 
@@ -20,24 +20,36 @@ class Middleware(object):
         return self.commands
 
     def upload(self, file, data):
-        numberServer = self.chooseWorker(file)
-        worker = workers[numberServer]
+        numberServer1,numberServer2 = self.chooseWorker(file)
+        worker = workers[numberServer1]
+        worker2 = workers[numberServer2]
         cwd = '/'
         worker.createFile(cwd, file, data)
-        p = '>> Upload ' + file + ' berhasil! file disimpan di server ' + repr(numberServer+1)
+        p = '>> Upload ' + file + ' berhasil! file disimpan di server ' + repr(numberServer1 + 1)
+        print (p)
+        worker2.createFile(cwd, file, data)
+        p = '>> Upload ' + file + ' berhasil! file disimpan di server backup : ' + repr(numberServer2+1)
         print (p)
 
     def chooseWorker(self, file):
         self.h1= hashlib.md5(file).hexdigest()[-1]
-        self.h2 = hashlib.md5(file).hexdigest()[0]
-        if self.h1 == '0' or self.h1 == '1' or self.h1 == '2' or self.h1 == '3' or self.h2 == '0' or self.h2 == '1' or self.h2 == '2' or self.h2 == '3':
-            return 0
-        elif self.h1 == '4' or self.h1 == '5' or self.h1 == '6' or self.h1 == '7' or self.h2 == '4' or self.h2 == '5' or self.h2 == '6' or self.h2 == '7':
-            return 1
-        elif self.h1 == '8' or self.h1 == '9' or self.h1 == 'a' or self.h1 == 'b' or self.h2 == '8' or self.h2 == '9' or self.h2 == 'a' or self.h2 == 'b':
-            return 2
-        elif self.h1 == 'c' or self.h1 == 'd' or self.h1 == 'e' or self.h1 == 'f' or self.h2 == 'c' or self.h2 == 'd' or self.h2 == 'e' or self.h2 == 'f':
-            return 3
+        if self.h1 == '0' or self.h1 == '1' or self.h1 == '2' or self.h1 == '3' :
+            return 0,3
+        elif self.h1 == '4' or self.h1 == '5' or self.h1 == '6' or self.h1 == '7' :
+            return 1,2
+        elif self.h1 == '8' or self.h1 == '9' or self.h1 == 'a' or self.h1 == 'b' :
+            return 2,1
+        elif self.h1 == 'c' or self.h1 == 'd' or self.h1 == 'e' or self.h1 == 'f' :
+            return 3,0
+
+        # if self.h2 == '0' or self.h2 == '1' or self.h2 == '2' or self.h2 == '3':
+        #     return 0
+        # elif self.h2 == '4' or self.h2 == '5' or self.h2 == '6' or self.h2 == '7':
+        #     return 1
+        # elif self.h2 == '8' or self.h2 == '9' or self.h2 == 'a' or self.h2 == 'b':
+        #     return 2
+        # elif self.h2 == 'c' or self.h2 == 'd' or self.h2 == 'e' or self.h2 == 'f':
+        #     return 3
 
         #return self.number%5
 
