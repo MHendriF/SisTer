@@ -22,7 +22,7 @@ class Warehouse(object):
 
 
 def main():
-    with Pyro4.Daemon(host='localhost') as daemon:
+    with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
         worker_name = 'kelompok3.worker2'
         uri = daemon.register(Warehouse)
         with Pyro4.locateNS() as ns:
