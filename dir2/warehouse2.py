@@ -25,8 +25,12 @@ class Warehouse(object):
 
 def main():
     with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
+<<<<<<< HEAD
         #worker_name = 'kelompok3.worker2'
         worker_name = "Worker_%d@%s" % (os.getpid(), socket.gethostname())
+=======
+        worker_name = 'kelompok3.worker2'
+>>>>>>> 8aff1f164f6e74d387a5676f3ebddee8314c3130
         uri = daemon.register(Warehouse)
         with Pyro4.locateNS() as ns:
             ns.register(worker_name, uri, metadata={"example3.worker2"})
