@@ -142,7 +142,7 @@ def main():
         {
             Worker: "worker"
         },
-        ns=False, host="127.0.0.1", port=9001)
+        ns=False, host="127.0.0.1", port=39102)
 
 
 if __name__ == "__main__":
