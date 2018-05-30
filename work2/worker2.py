@@ -2,17 +2,15 @@ from __future__ import print_function
 import Pyro4
 import os
 import shutil
-import Pyro4.socketutil
-import socket
 
 @Pyro4.expose
 @Pyro4.callback
-class Warehouse(object):
+class Worker(object):
 
     sharing_folder = {}
 
     def __init__(self):
-        self.sharing_folder['base'] = 'D:\Kuliah\Semester 8\FP\worker1'
+        self.sharing_folder['base'] = '/home/mocatfrio/Documents/vfs-pyro/worker2'
 
     def isExistFolder(self, path):
         full_path = self.sharing_folder['base']+path
@@ -139,21 +137,13 @@ class Warehouse(object):
             return err.replace(self.sharing_folder['base'],''), None
 
 
-# def main():
-#     Pyro4.Daemon.serveSimple(
-#         {
-#             Worker: "worker"
-#         },
-#         ns=False, host="127.0.0.1", port=9000)
+def main():
+    Pyro4.Daemon.serveSimple(
+        {
+            Worker: "worker"
+        },
+        ns=False, host="127.0.0.1", port=39102)
 
-with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
-    # create a unique name for this worker (otherwise it overwrites other workers in the name server)
-    worker_name = "Worker_%d@%s" % (os.getpid(), socket.gethostname())
-    print("Starting up worker", worker_name)
-    uri = daemon.register(Warehouse)
-    with Pyro4.locateNS() as ns:
-        ns.register(worker_name, uri, metadata={"kelompok3.worker3"})
-    daemon.requestLoop()
 
 if __name__ == "__main__":
     main()
