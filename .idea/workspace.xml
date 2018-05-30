@@ -19,6 +19,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="warehouse3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dir3/warehouse3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" column="78" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="warehouse4.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dir4/warehouse4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="154" column="66" selection-start-line="154" selection-start-column="66" selection-end-line="154" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="middleware.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/middleware.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="38" column="85" selection-start-line="38" selection-start-column="85" selection-end-line="38" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="warehouse1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dir1/warehouse1.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -31,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="warehouse2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="warehouse2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dir2/warehouse2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
@@ -58,10 +97,11 @@
       <list>
         <option value="$PROJECT_DIR$/client.py" />
         <option value="$PROJECT_DIR$/coba.py" />
-        <option value="$PROJECT_DIR$/dir3/warehouse3.py" />
-        <option value="$PROJECT_DIR$/dir4/warehouse4.py" />
         <option value="$PROJECT_DIR$/dir1/warehouse1.py" />
         <option value="$PROJECT_DIR$/dir2/warehouse2.py" />
+        <option value="$PROJECT_DIR$/dir3/warehouse3.py" />
+        <option value="$PROJECT_DIR$/dir4/warehouse4.py" />
+        <option value="$PROJECT_DIR$/middleware.py" />
       </list>
     </option>
   </component>
@@ -99,6 +139,11 @@
             </path>
             <path>
               <item name="SisTer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SisTer" type="462c0819:PsiDirectoryNode" />
+              <item name="dir4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SisTer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -129,8 +174,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.warehouse4">
-    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.middleware">
+    <configuration name="middleware" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SisTer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,11 +183,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="D:/Pyro4/examples/filetransfer" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:/Pyro4/examples/filetransfer/client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/middleware.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -221,19 +266,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.client" />
       <item itemvalue="Python.warehouse1" />
       <item itemvalue="Python.warehouse2" />
       <item itemvalue="Python.warehouse3" />
       <item itemvalue="Python.warehouse4" />
+      <item itemvalue="Python.middleware" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.middleware" />
         <item itemvalue="Python.warehouse4" />
         <item itemvalue="Python.warehouse3" />
         <item itemvalue="Python.warehouse2" />
         <item itemvalue="Python.warehouse1" />
-        <item itemvalue="Python.client" />
       </list>
     </recent_temporary>
   </component>
@@ -254,10 +299,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24851191" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24851191" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32843137" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -464,30 +509,16 @@
     <entry file="file://$PROJECT_DIR$/FP_server.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dir4/warehouse4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dir3/warehouse3.py">
+    <entry file="file://$PROJECT_DIR$/dir2/warehouse2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="181">
+          <caret line="154" column="66" selection-start-line="154" selection-start-column="66" selection-end-line="154" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -501,12 +532,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dir2/warehouse2.py">
+    <entry file="file://$PROJECT_DIR$/coba.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="153">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir3/warehouse3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="78" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir4/warehouse4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
           <caret line="154" column="66" selection-start-line="154" selection-start-column="66" selection-end-line="154" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="38" column="85" selection-start-line="38" selection-start-column="85" selection-end-line="38" selection-end-column="85" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>

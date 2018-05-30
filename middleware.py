@@ -29,13 +29,14 @@ class Middleware(object):
 
     def chooseWorker(self, file):
         self.h1= hashlib.md5(file).hexdigest()[-1]
-        if self.h1 == '0' or self.h1 == '1' or self.h1 == '2' or self.h1 == '3':
+        self.h2 = hashlib.md5(file).hexdigest()[0]
+        if self.h1 == '0' or self.h1 == '1' or self.h1 == '2' or self.h1 == '3' or self.h2 == '0' or self.h2 == '1' or self.h2 == '2' or self.h2 == '3':
             return 0
-        elif self.h1 == '4' or self.h1 == '5' or self.h1 == '6' or self.h1 == '7':
+        elif self.h1 == '4' or self.h1 == '5' or self.h1 == '6' or self.h1 == '7' or self.h2 == '4' or self.h2 == '5' or self.h2 == '6' or self.h2 == '7':
             return 1
-        elif self.h1 == '8' or self.h1 == '9' or self.h1 == 'a' or self.h1 == 'b':
+        elif self.h1 == '8' or self.h1 == '9' or self.h1 == 'a' or self.h1 == 'b' or self.h2 == '8' or self.h2 == '9' or self.h2 == 'a' or self.h2 == 'b':
             return 2
-        elif self.h1 == 'c' or self.h1 == 'd' or self.h1 == 'e' or self.h1 == 'f':
+        elif self.h1 == 'c' or self.h1 == 'd' or self.h1 == 'e' or self.h1 == 'f' or self.h2 == 'c' or self.h2 == 'd' or self.h2 == 'e' or self.h2 == 'f':
             return 3
 
         #return self.number%5
