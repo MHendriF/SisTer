@@ -12,7 +12,7 @@ class Warehouse(object):
     sharing_folder = {}
 
     def __init__(self):
-        self.sharing_folder['base'] = 'D:\Kuliah\Semester 8\FP\worker1'
+        self.sharing_folder['base'] = 'D:\Kuliah\Semester 8\Sister\SisTer\dir2'
 
     def isExistFolder(self, path):
         full_path = self.sharing_folder['base']+path
@@ -152,7 +152,7 @@ with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
     print("Starting up worker", worker_name)
     uri = daemon.register(Warehouse)
     with Pyro4.locateNS() as ns:
-        ns.register(worker_name, uri, metadata={"kelompok3.worker3"})
+        ns.register(worker_name, uri, metadata={"kelompok3.worker2"})
     daemon.requestLoop()
 
 if __name__ == "__main__":

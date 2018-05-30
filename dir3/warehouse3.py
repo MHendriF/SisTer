@@ -12,7 +12,7 @@ class Warehouse(object):
     sharing_folder = {}
 
     def __init__(self):
-        self.sharing_folder['base'] = 'D:\Kuliah\Semester 8\FP\worker1'
+        self.sharing_folder['base'] = 'D:\Kuliah\Semester 8\Sister\SisTer\dir3'
 
     def isExistFolder(self, path):
         full_path = self.sharing_folder['base']+path
