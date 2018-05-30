@@ -1,6 +1,8 @@
 from __future__ import print_function
 import Pyro4
 import Pyro4.socketutil
+import os
+import socket
 
 @Pyro4.expose
 @Pyro4.behavior(instance_mode="single")
@@ -22,11 +24,12 @@ class Warehouse(object):
 
 
 def main():
-    with Pyro4.Daemon(host='localhost') as daemon:
-        worker_name = 'kelompok3.worker2'
+    with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
+        #worker_name = 'kelompok3.worker2'
+        worker_name = "Worker_%d@%s" % (os.getpid(), socket.gethostname())
         uri = daemon.register(Warehouse)
         with Pyro4.locateNS() as ns:
-            ns.register(worker_name, uri)
+            ns.register(worker_name, uri, metadata={"example3.worker2"})
         print(worker_name + 'ready')
         daemon.requestLoop()
 

@@ -1,5 +1,7 @@
 from __future__ import print_function
 import Pyro4
+import socket
+import os
 
 @Pyro4.expose
 @Pyro4.behavior(instance_mode="single")
@@ -18,17 +20,15 @@ class Warehouse(object):
         self.contents.append(item)
         print("{0} stored the {1}.".format(name, item))
 
-
-
 def main():
-    with Pyro4.Daemon(host='localhost') as daemon:
-        worker_name = 'kelompok3.worker1'
+    with Pyro4.Daemon(host=Pyro4.socketutil.getIpAddress(None)) as daemon:
+        # worker_name = 'kelompok3.worker4'
+        worker_name = "Worker_%d@%s" % (os.getpid(), socket.gethostname())
         uri = daemon.register(Warehouse)
         with Pyro4.locateNS() as ns:
-            ns.register(worker_name, uri)
-        print(worker_name + 'ready')
+            ns.register(worker_name, uri, metadata={"example3.worker1"})
+            print(worker_name + 'ready')
         daemon.requestLoop()
-
 
 
 if __name__ == "__main__":
